@@ -562,6 +562,7 @@ public class IndirectRenderer : MonoBehaviour
         uint MATRIX_HEIGHT = (uint)NUM_ELEMENTS / BITONIC_BLOCK_SIZE;
 
         m_sortingCommandBuffer = new CommandBuffer {name = "AsyncGPUSorting"};
+        m_sortingCommandBuffer.SetExecutionFlags(CommandBufferExecutionFlags.AsyncCompute);
 
         // Sort the data
         // First sort the rows for the levels <= to the block size
